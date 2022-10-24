@@ -1,0 +1,64 @@
+{
+  "static": {
+    "usersRegistered": 481,
+    "messagesSent": "140K",
+    "messagesToday": 389
+  },
+  "lastMessages": [
+    {
+      "name": "Евгений Ройзман",
+      "nickname": "@roizmangbn",
+      "avatar": "ссылка на аватарку",
+      "date": "28 минут назад",
+      "content": "Пробежал десятку по набережной. Снег идет, тихо, светло. Все будет хорошо",
+      "replies": 21,
+      "likes": 23,
+      "resposts": 9
+    },
+    {
+      "name": "Elom Musk",
+      "nickname": "@elonmusk",
+      "avatar": "ссылка на аватарку",
+      "date": "12 часов назад",
+      "content": "Has anyone seen web3? I can't find it.",
+      "replies": 21,
+      "likes": 23,
+      "resposts": 9
+    },
+    {
+      "name": "Sports.ru",
+      "nickname": "@sportsru",
+      "avatar": "ссылка на аватарку",
+      "date": "12 часов назад",
+      "content": "Кстати, год назад сборная была на 39-м месте. Прорыв! А лидер рейтинга вновь не поменялся.",
+      "replies": 21,
+      "likes": 23,
+      "resposts": 9,
+      "attachment": "ссылка на фото"
+    }
+  ],
+  "topics": [
+    { "topic": "Новый год 2022", "location": "Россия", "messages": 2941 },
+    { "topic": "BTS", "location": "Мир", "messages": 29718 },
+    { "topic": "Украина", "location": "Россия", "messages": 958186 },
+    { "topic": "Дудь", "location": "Россия", "messages": 4185 },
+    { "topic": "ЛГБТ", "location": "Москва", "messages": 482 }
+  ],
+  "blogs": [
+    {
+      "name": "Хабр Научпоп",
+      "nickname": "@habr_popsci",
+      "avatar": "ссылка на аватарку"
+    },
+    {
+      "name": "Матч ТВ",
+      "nickname": "@MatchTV",
+      "avatar": "ссылка на аватарку"
+    },
+    {
+      "name": "Популярная механика",
+      "nickname": "@PopMechanica",
+      "avatar": "ссылка на аватарку"
+    }
+  ]
+}
