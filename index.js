@@ -7,25 +7,25 @@ document.addEventListener("DOMContentLoaded", function () {
   let authCloseBtn = document.querySelector("#auth_close_btn");
 
   // Открытие окна регистрации
-  registrationBtn.addEventListener("click", (e) => {
+  registrationBtn.addEventListener("click", () => {
     registrationPopup.classList.remove("hide");
     document.body.style.overflow = "hidden";
   });
 
   // Открытие окна авторизации
-  authBtn.addEventListener("click", (e) => {
+  authBtn.addEventListener("click", () => {
     authPopup.classList.remove("hide");
     document.body.style.overflow = "hidden";
   });
 
   // Закрытие окна регистрации на десктопе
-  registrationCloseBtn.addEventListener("click", (e) => {
+  registrationCloseBtn.addEventListener("click", () => {
     registrationPopup.classList.add("hide");
     document.body.style.overflow = "visible";
   });
 
   // Закрытие окна авторизации на десктопе
-  authCloseBtn.addEventListener("click", (e) => {
+  authCloseBtn.addEventListener("click", () => {
     authPopup.classList.add("hide");
     document.body.style.overflow = "visible";
   });
@@ -70,9 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let submitRegistrationBtn = document.querySelector("#submit_register_btn");
 
   submitRegistrationBtn.addEventListener("click", () => {
-    alert(
-      `${registerNicknameForm.value} ${registerEmailForm.value} ${registerPasswordForm.value} ${registerPasswordRepeatForm.value}`
-    );
+    validateRegisterModal();
   });
 
   // Форма авторизации
@@ -84,6 +82,85 @@ document.addEventListener("DOMContentLoaded", function () {
     alert(`${authNicknameOrEmailForm.value} ${authPasswordForm.value}`);
   });
 
+  // Валидация окна регистрации
+  function validateRegisterModal() {
+    let nicknameInputBox = document.querySelector("#nickname-input-box");
+    let emailInputBox = document.querySelector("#email-input-box");
+    let passwordInputBox = document.querySelector("#password-input-box");
+    let repeatPasswordInputBox = document.querySelector(
+      "#repeat-password-input-box"
+    );
+    let validationError = false;
+
+    function showErrorMessage(errorText, inputBox) {}
+
+    function validatePassword() {
+      let errorText = document.createElement("p");
+      errorText.innerHTML = "Пароли должны совпадать";
+
+      if (registerPasswordForm.value !== registerPasswordRepeatForm.value) {
+        passwordInputBox.classList.add("error-input");
+        repeatPasswordInputBox.classList.add("error-input");
+        repeatPasswordInputBox.append(errorText);
+        validationError = true;
+      }
+    }
+    function validateAllInputValue() {
+      let errorText = document.createElement("p");
+      errorText.innerHTML = "Все поля должны быть заполнены";
+
+      if (
+        !registerNicknameForm.value ||
+        !registerEmailForm.value ||
+        !registerPasswordForm.value ||
+        !registerPasswordRepeatForm.value
+      ) {
+        nicknameInputBox.classList.add("error-input");
+        emailInputBox.classList.add("error-input");
+        passwordInputBox.classList.add("error-input");
+        repeatPasswordInputBox.classList.add("error-input");
+        repeatPasswordInputBox.append(errorText);
+        validationError = true;
+      }
+    }
+
+    function validateEmail() {
+      let value = registerEmailForm.value;
+      let indexOfAt = value.indexOf("@");
+      let indexOfDot = value.indexOf(".");
+      let strBeforeAt = value.slice(0, indexOfAt);
+      let strAfterAt = value.slice(indexOfAt + 1, indexOfDot);
+      let strAfterDot = value.slice(indexOfDot + 1);
+
+      let errorText = document.createElement("p");
+      errorText.innerHTML = "Введите корректный Email";
+      if (
+        indexOfAt === -1 ||
+        indexOfDot === -1 ||
+        strBeforeAt.length < 1 ||
+        strAfterAt.length < 1 ||
+        strAfterDot < 1
+      ) {
+        validationError = true;
+        emailInputBox.classList.add("error-input");
+        emailInputBox.append(errorText);
+      }
+    }
+
+    validatePassword();
+    validateAllInputValue();
+    validateEmail();
+
+    if (!validationError) {
+      alert(
+        `${registerNicknameForm.value} ${registerEmailForm.value} ${registerPasswordForm.value} ${registerPasswordRepeatForm.value}`
+      );
+      registerNicknameForm.value = "";
+      registerEmailForm.value = "";
+      registerPasswordForm.value = "";
+      registerPasswordRepeatForm.value = "";
+    }
+  }
   // Синий экран со статистикой
   let usersRegistered = 481;
   let messagesSent = "140K";
