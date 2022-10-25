@@ -92,8 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     let validationError = false;
 
-    function showErrorMessage(errorText, inputBox) {}
-
     function validatePassword() {
       let errorText = document.createElement("p");
       errorText.innerHTML = "Пароли должны совпадать";
@@ -108,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function validateAllInputValue() {
       let errorText = document.createElement("p");
       errorText.innerHTML = "Все поля должны быть заполнены";
-
       if (
         !registerNicknameForm.value ||
         !registerEmailForm.value ||
@@ -123,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
         validationError = true;
       }
     }
-
     function validateEmail() {
       let value = registerEmailForm.value;
       let indexOfAt = value.indexOf("@");
@@ -131,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
       let strBeforeAt = value.slice(0, indexOfAt);
       let strAfterAt = value.slice(indexOfAt + 1, indexOfDot);
       let strAfterDot = value.slice(indexOfDot + 1);
-
       let errorText = document.createElement("p");
       errorText.innerHTML = "Введите корректный Email";
       if (
@@ -146,11 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInputBox.append(errorText);
       }
     }
-
     validatePassword();
     validateAllInputValue();
     validateEmail();
-
     if (!validationError) {
       alert(
         `${registerNicknameForm.value} ${registerEmailForm.value} ${registerPasswordForm.value} ${registerPasswordRepeatForm.value}`
