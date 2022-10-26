@@ -84,6 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Валидация окна регистрации
   function validateRegisterModal() {
+    let allInputs = document.querySelectorAll("input");
+    let allInputBoxes = document.querySelectorAll(".input-box");
     let nicknameInputBox = document.querySelector("#nickname-input-box");
     let emailInputBox = document.querySelector("#email-input-box");
     let passwordInputBox = document.querySelector("#password-input-box");
@@ -91,6 +93,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "#repeat-password-input-box"
     );
     let validationError = false;
+
+    function removeAllParagraphs() {
+      let allParagraphs = registrationPopup.querySelectorAll("p");
+      allParagraphs.forEach((p) => {
+        p.remove();
+      });
+    }
 
     function validatePassword() {
       let errorText = document.createElement("p");
@@ -141,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInputBox.append(errorText);
       }
     }
+    removeAllParagraphs();
     validatePassword();
     validateAllInputValue();
     validateEmail();
@@ -148,10 +158,16 @@ document.addEventListener("DOMContentLoaded", function () {
       alert(
         `${registerNicknameForm.value} ${registerEmailForm.value} ${registerPasswordForm.value} ${registerPasswordRepeatForm.value}`
       );
-      registerNicknameForm.value = "";
-      registerEmailForm.value = "";
-      registerPasswordForm.value = "";
-      registerPasswordRepeatForm.value = "";
+      // registerNicknameForm.value = "";
+      // registerEmailForm.value = "";
+      // registerPasswordForm.value = "";
+      // registerPasswordRepeatForm.value = "";
+      allInputs.forEach((input) => {
+        input.value = "";
+      });
+      allInputBoxes.forEach((box) => {
+        box.classList.remove("error-input");
+      });
     }
   }
   // Синий экран со статистикой
