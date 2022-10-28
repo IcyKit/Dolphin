@@ -6,6 +6,7 @@
   },
   "lastMessages": [
     {
+      "id": 1,
       "name": "Евгений Ройзман",
       "nickname": "@roizmangbn",
       "avatar": "ссылка на аватарку",
@@ -16,25 +17,38 @@
       "resposts": 9
     },
     {
+      "id": 2,
       "name": "Elom Musk",
       "nickname": "@elonmusk",
       "avatar": "ссылка на аватарку",
-      "date": "12 часов назад",
+      "date": "2 часа назад",
       "content": "Has anyone seen web3? I can't find it.",
-      "replies": 21,
-      "likes": 23,
-      "resposts": 9
+      "replies": 23,
+      "likes": 53,
+      "resposts": 4
     },
     {
+      "id": 3,
       "name": "Sports.ru",
       "nickname": "@sportsru",
       "avatar": "ссылка на аватарку",
       "date": "12 часов назад",
       "content": "Кстати, год назад сборная была на 39-м месте. Прорыв! А лидер рейтинга вновь не поменялся.",
-      "replies": 21,
-      "likes": 23,
-      "resposts": 9,
+      "replies": 12,
+      "likes": 80,
+      "resposts": 1,
       "attachment": "ссылка на фото"
+    },
+    {
+      "id": 4,
+      "name": "Михаил",
+      "nickname": "@msvetov",
+      "avatar": "ссылка на аватарку",
+      "date": "1 день назад",
+      "content": "В столице Австрии уже который месяц продолжаются митинги против введения электронных паспортов. В современной истории ещё не было таких массовых, продолжительных и глобальных протестов. Но журналистам не интересно рассказывать о том, что на самом деле волнует людей.",
+      "replies": 57,
+      "likes": 99,
+      "resposts": 45
     }
   ],
   "topics": [
