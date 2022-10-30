@@ -178,4 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#usersRegistered").innerHTML = usersRegistered;
   document.querySelector("#messagesSent").innerHTML = messagesSent;
   document.querySelector("#messagesToday").innerHTML = messagesToday;
+
+  // Запрос к JSON
+  function getMessages() {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }
+  getMessages();
 });
