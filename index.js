@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   let registrationBtn = document.querySelector("#register_btn");
   let registrationPopup = document.querySelector("#register_popup");
   let registrationCloseBtn = document.querySelector("#register_close_btn");
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Валидация окна регистрации
-  function validateRegisterModal() {
+  const validateRegisterModal = () => {
     let allInputs = document.querySelectorAll("input");
     let allInputBoxes = document.querySelectorAll(".input-box");
     let nicknameInputBox = document.querySelector("#nickname-input-box");
@@ -94,14 +94,14 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     let validationError = false;
 
-    function removeAllParagraphs() {
+    const removeAllParagraphs = () => {
       let allParagraphs = registrationPopup.querySelectorAll("p");
       allParagraphs.forEach((p) => {
         p.remove();
       });
-    }
+    };
 
-    function validatePassword() {
+    const validatePassword = () => {
       let errorText = document.createElement("p");
       errorText.innerHTML = "Пароли должны совпадать";
 
@@ -111,8 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
         repeatPasswordInputBox.append(errorText);
         validationError = true;
       }
-    }
-    function validateAllInputValue() {
+    };
+    const validateAllInputValue = () => {
       let errorText = document.createElement("p");
       errorText.innerHTML = "Все поля должны быть заполнены";
       if (
@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
         repeatPasswordInputBox.append(errorText);
         validationError = true;
       }
-    }
-    function validateEmail() {
+    };
+    const validateEmail = () => {
       let value = registerEmailForm.value;
       let indexOfAt = value.indexOf("@");
       let indexOfDot = value.indexOf(".");
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInputBox.classList.add("error-input");
         emailInputBox.append(errorText);
       }
-    }
+    };
     removeAllParagraphs();
     validatePassword();
     validateAllInputValue();
@@ -166,10 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = "";
       });
       allInputBoxes.forEach((box) => {
-        box.classList.remove("error-input");
+        box.classList.remove("error-inputj");
       });
     }
-  }
+  };
   // Синий экран со статистикой
   let usersRegistered = 481;
   let messagesSent = "140K";
@@ -180,10 +180,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#messagesToday").innerHTML = messagesToday;
 
   // Запрос к JSON
-  function getMessages() {
+  const getMessages = () => {
     fetch("./data.json")
       .then((res) => res.json())
       .then((json) => console.log(json));
-  }
+  };
   getMessages();
 });
