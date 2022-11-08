@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let authBtn = document.querySelector("#auth_btn");
   let authPopup = document.querySelector("#auth_popup");
   let authCloseBtn = document.querySelector("#auth_close_btn");
+  let registrationBtnDown = document.querySelector("#register_btn_down");
+  let authBtnDown = document.querySelector("#auth_btn_down");
 
   // Открытие окна регистрации
   registrationBtn.addEventListener("click", () => {
@@ -12,8 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
   });
 
+  registrationBtnDown.addEventListener("click", () => {
+    registrationPopup.classList.remove("hide");
+    document.body.style.overflow = "hidden";
+  });
+
   // Открытие окна авторизации
   authBtn.addEventListener("click", () => {
+    authPopup.classList.remove("hide");
+    document.body.style.overflow = "hidden";
+  });
+
+  authBtnDown.addEventListener("click", () => {
     authPopup.classList.remove("hide");
     document.body.style.overflow = "hidden";
   });

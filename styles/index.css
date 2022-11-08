@@ -353,6 +353,59 @@ main h2 {
   z-index: 10;
 }
 
+.skeleton {
+  width: 630px;
+  height: 200px;
+  padding: 16px;
+  border-radius: 10px;
+  margin-right: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.skeleton__header {
+  display: flex;
+  align-items: center;
+}
+
+.skeleton__avatar {
+  width: 55px;
+  height: 55px;
+  background-color: #e4ebef;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.skeleton__title-1 {
+  width: 150px;
+  height: 13px;
+  background-color: #e4ebef;
+  margin-bottom: 10px;
+}
+
+.skeleton__title-2 {
+  width: 350px;
+  height: 13px;
+  background-color: #e4ebef;
+}
+
+.skeleton__header {
+  margin-bottom: 40px;
+}
+
+.skeleton__body-1 {
+  width: 550px;
+  height: 13px;
+  background-color: #e4ebef;
+  margin-bottom: 15px;
+}
+
+.skeleton__body-2 {
+  width: 450px;
+  height: 13px;
+  background-color: #e4ebef;
+}
+
 @media screen and (min-width: 992px) {
   body {
     background-color: #f4f5f7;
