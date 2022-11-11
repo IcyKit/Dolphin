@@ -219,43 +219,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const makeMessage = () => {
       const messagesList = document.querySelector("#messagesList");
       const messageItem = document.createElement("div");
-      messageItem.innerHTML = `
-    <div class="last-messages__box">
-                  <img
-                    class="last-messages__box-avatar"
-                    src=${messagesAndPhoto[1][0]["url"]}
-                    alt="Avatar"
-                  />
-                  <div class="last-messages__box-right">
-                    <div class="last-messages__box-title">
-                      <div class="last-messages__box-title_left">
-                        <h3>${messagesAndPhoto[0][0]["name"]}</h3>
-                        <p class="last-messages__box-nickname">${messagesAndPhoto[0][0]["nickname"]}</p>
-                      </div>
-                      <p class="last-messages__box-time">${messagesAndPhoto[0][0]["date"]}</p>
-                    </div>
-                    <div class="last-messages__box-message">
-                      <p>
-                        ${messagesAndPhoto[0][0]["content"]}
-                      </p>
-                    </div>
-                    <div class="last-messages__box-statistics">
-                      <div class="last-messages__box-statistic">
-                        <img src="/resources/reply.png" alt="Reply" />
-                        <p class="last-messages__box-statistic-title">${messagesAndPhoto[0][0]["replies"]}</p>
-                      </div>
-                      <div class="last-messages__box-statistic">
-                        <img src="/resources/like.png" alt="Like" />
-                        <p class="last-messages__box-statistic-title">${messagesAndPhoto[0][0]["likes"]}</p>
-                      </div>
-                      <div class="last-messages__box-statistic">
-                        <img src="/resources/forward.png" alt="Forward" />
-                        <p class="last-messages__box-statistic-title">${messagesAndPhoto[0][0]["reposts"]}</p>
-                      </div>
-                    </div>
-                  </div>
-      </div>
-                `;
+      messagesAndPhoto[0].forEach((item, index) => {
+        messageItem.innerHTML += `
+       <div class="last-messages__box">
+                     <img
+                       class="last-messages__box-avatar"
+                       src=${messagesAndPhoto[1][index]["url"]}
+                       alt="Avatar"
+                     />
+                     <div class="last-messages__box-right">
+                       <div class="last-messages__box-title">
+                         <div class="last-messages__box-title_left">
+                           <h3>${item.name}</h3>
+                           <p class="last-messages__box-nickname">${item.nickname}</p>
+                         </div>
+                         <p class="last-messages__box-time">${item.date}</p>
+                       </div>
+                       <div class="last-messages__box-message">
+                         <p>
+                           ${item.content}
+                         </p>
+                       </div>
+                       <div class="last-messages__box-statistics">
+                         <div class="last-messages__box-statistic">
+                           <img src="/resources/reply.png" alt="Reply" />
+                           <p class="last-messages__box-statistic-title">${item.replies}</p>
+                         </div>
+                         <div class="last-messages__box-statistic">
+                           <img src="/resources/like.png" alt="Like" />
+                           <p class="last-messages__box-statistic-title">${item.likes}</p>
+                         </div>
+                         <div class="last-messages__box-statistic">
+                           <img src="/resources/forward.png" alt="Forward" />
+                           <p class="last-messages__box-statistic-title">${item.reposts}</p>
+                         </div>
+                       </div>
+                     </div>
+         </div>
+        `;
+      });
       messagesList.append(messageItem);
     };
     makeMessage();
