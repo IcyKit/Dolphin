@@ -62,17 +62,17 @@
     {
       "name": "Хабр Научпоп",
       "nickname": "@habr_popsci",
-      "avatar": "ссылка на аватарку"
+      "avatar": "/resources/blogger1.png"
     },
     {
       "name": "Матч ТВ",
       "nickname": "@MatchTV",
-      "avatar": "ссылка на аватарку"
+      "avatar": "/resources/blogger2.png"
     },
     {
       "name": "Популярная механика",
       "nickname": "@PopMechanica",
-      "avatar": "ссылка на аватарку"
+      "avatar": "/resources/blogger3.png"
     }
   ]
 }
