@@ -1,5 +1,5 @@
 {
-  "static": {
+  "staticInfo": {
     "usersRegistered": 481,
     "messagesSent": "140K",
     "messagesToday": 389
@@ -21,7 +21,7 @@
       "name": "Elom Musk",
       "nickname": "@elonmusk",
       "avatar": "ссылка на аватарку",
-      "date": "2022-11-14T18:13:10.511Z",
+      "date": "2022-11-23T15:44:10.511Z",
       "content": "Has anyone seen web3? I can't find it.",
       "replies": 23,
       "likes": 53,
@@ -37,7 +37,7 @@
       "replies": 12,
       "likes": 80,
       "reposts": 1,
-      "attachment": "ссылка на фото"
+      "attachment": "/resources/karpin.png"
     },
     {
       "id": 4,

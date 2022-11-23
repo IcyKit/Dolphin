@@ -12,7 +12,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/index.css" />
-    <script src="/index.js"></script>
+    <script src="/makeSentence.js" type="module"></script>
+    <script src="/index.js" type="module"></script>
   </head>
 
   <body>
@@ -226,10 +227,9 @@
                 placeholder="Никнейм или адрес электронной почты"
               />
             </div>
-            <div class="input-box error-input">
+            <div class="input-box">
               <label for="auth_password">Пароль</label>
               <input id="auth_password" type="password" placeholder="Пароль" />
-              <p>Адрес не валиден</p>
             </div>
             <div class="sign-up__form-btn">
               <button class="btn active-btn" id="submit_auth_btn">
